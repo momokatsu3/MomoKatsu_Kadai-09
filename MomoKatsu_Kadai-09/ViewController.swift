@@ -4,9 +4,6 @@
 //  Created by モモカツ on 2023/06/07.
 // Part9 Modal(モーダル)画面で都道府県を選択するアプリ
 
-// 【Swift/Xcode超入門】画面遷移するアプリを作ってみよう
-// https://satoriku.com/app-dev-step4/
-
 import UIKit
 
 class ViewController: UIViewController {

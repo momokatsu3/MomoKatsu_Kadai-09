@@ -2,12 +2,6 @@
 //  ModalViewController.swift
 //  MomoKatsu_Kadai-09
 //  Created by モモカツ on 2023/06/07.
-// 【Swift】Table Viewの使い方。データを目次のように並べて選択できる入れ物。
-// https://hajihaji-lemon.com/swift/ui-table-view/
-// 【Swift】UITableViewDelegateの使い方。テーブルのセルが選択されたときにイベントを発生させる。
-// https://hajihaji-lemon.com/swift/uitableviewdelegate/
-//　【Swift 初心者】[超簡単] UITableViewのセルをタップした時のアクション
-//　https://tech.playground.style/swift/tableview-didselectroeat-beginner-alert/
 
 import UIKit
 
@@ -15,7 +9,7 @@ class CitySelectViewController: UIViewController, UITableViewDataSource, UITable
     // テーブルビューに表示データ
     var dataList = ["東京都","神奈川県", "埼玉県", "千葉県"]
 
-    // テーブルビューに表示するデータを返すメソッド（スクロールなどでページを更新する必要が出るたびに呼び出される）
+    // テーブルビューに表示するデータを返すメソッド
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //セルを取得する
         let cell = tableView.dequeueReusableCell(withIdentifier: "TestCell", for:indexPath as IndexPath) as UITableViewCell
@@ -32,8 +26,7 @@ class CitySelectViewController: UIViewController, UITableViewDataSource, UITable
 
     // テーブルビューのデータ選択後に呼び出されるメソッド
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    // 以下では、この関数が実行できなかった。！！
-    //private func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
         let selectData = tableView.cellForRow(at: indexPath as IndexPath)!.textLabel!.text
         print("\(selectData!)が呼び出されました。")
 
