@@ -1,8 +1,7 @@
 //
 //  SceneDelegate.swift
 //  MomoKatsu_Kadai-09
-//
-//  Created by モモカツ on 2023/06/14.
+//  Created by モモカツ on 2023/06/07.
 //
 
 import UIKit

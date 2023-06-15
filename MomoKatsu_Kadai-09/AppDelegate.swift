@@ -1,8 +1,7 @@
 //
 //  AppDelegate.swift
-//  MomoKatsu_Kadai-09
-//
-//  Created by モモカツ on 2023/06/14.
+//  MomoKatsu_Kadai-09 改修版_01
+//  Created by モモカツ on 2023/06/15.
 //
 
 import UIKit
@@ -10,7 +9,8 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+//    // AppDelegateに受け渡す変数を用意
+//    var selsectTablaValueDelgate = "未選択"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

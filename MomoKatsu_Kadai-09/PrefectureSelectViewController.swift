@@ -1,11 +1,12 @@
 //
-//  ModalViewController.swift
-//  MomoKatsu_Kadai-09 改修版
-//  Created by モモカツ on 2023/06/14.
+//  PrefectureSelectViewController.swift
+//  MomoKatsu_Kadai-09 改修版_01
+//  Created by モモカツ on 2023/06/15.
 
 import UIKit
 
 class PrefectureSelectViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
      // テーブルビューに表示データ
     var dataList = ["東京都","神奈川県", "埼玉県", "千葉県"]
 
@@ -14,20 +15,21 @@ class PrefectureSelectViewController: UIViewController, UITableViewDataSource, U
         //セルを取得する
         let cell = tableView.dequeueReusableCell(withIdentifier: "TestCell", for:indexPath as IndexPath) as UITableViewCell
         cell.textLabel?.text = dataList[indexPath.row]
+        //print(cell)
         return cell
     }
 
     // テーブルビューに表示するデータ個数を返すメソッド
     func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int {
+        //print(dataList.count)
         return dataList.count
     }
 
     // テーブルビューのデータ選択後に呼び出されるメソッド
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
         let selectData = tableView.cellForRow(at: indexPath as IndexPath)!.textLabel!.text
 
-        //print("\(selectData!)が呼び出されました。 ', '", selectData!, "'")
+        //print("\(selectData!)が、呼び出されました。', '")
 
         let nextView = storyboard?.instantiateViewController(withIdentifier: "testView") as! ViewController
         nextView.modalTransitionStyle = .crossDissolve
@@ -35,6 +37,7 @@ class PrefectureSelectViewController: UIViewController, UITableViewDataSource, U
 
         // ViewController.swift内の変数selsectTablaValueに選択都市名をを代入
         nextView.selsectTablaValue = selectData!
+        //print("'", nextView.selsectTablaValue, "'", selectData!, "'")
 
         //遷移を実行
         self.present(nextView, animated: true, completion: nil)
@@ -44,6 +47,7 @@ class PrefectureSelectViewController: UIViewController, UITableViewDataSource, U
     // キャンセルを選択した場合
     @IBAction func tapCanselButtonItems(_ sender: Any) {
         // モーダル遷移で元に画面遷移
+        //（退出させる(dismiss)、アニメーションありで、完了した後の処理なし）
         dismiss(animated: true, completion: nil)
     }
 
