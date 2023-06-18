@@ -10,6 +10,8 @@ class PrefectureSelectViewController: UIViewController, UITableViewDataSource, U
      // テーブルビューに表示データ
     var dataList = ["東京都","神奈川県", "埼玉県", "千葉県"]
 
+    private(set) var selectedPrefecture: String?
+
     // テーブルビューに表示するデータを返すメソッド（スクロールなどでページを更新する必要が出るたびに呼び出される）
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //セルを取得する
@@ -27,21 +29,9 @@ class PrefectureSelectViewController: UIViewController, UITableViewDataSource, U
 
     // テーブルビューのデータ選択後に呼び出されるメソッド
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectData = tableView.cellForRow(at: indexPath as IndexPath)!.textLabel!.text
+        selectedPrefecture = dataList[indexPath.row]
 
-        //print("\(selectData!)が、呼び出されました。', '")
-
-        let nextView = storyboard?.instantiateViewController(withIdentifier: "testView") as! ViewController
-        nextView.modalTransitionStyle = .crossDissolve
-        nextView.modalPresentationStyle = .fullScreen
-
-        // ViewController.swift内の変数selsectTablaValueに選択都市名をを代入
-        nextView.selsectTablaValue = selectData!
-        //print("'", nextView.selsectTablaValue, "'", selectData!, "'")
-
-        //遷移を実行
-        self.present(nextView, animated: true, completion: nil)
-
+        performSegue(withIdentifier: "didSelectPrefecture", sender: nil)
     }
 
     // キャンセルを選択した場合
