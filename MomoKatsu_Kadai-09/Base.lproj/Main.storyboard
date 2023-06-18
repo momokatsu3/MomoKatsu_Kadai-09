@@ -105,6 +105,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="RtO-Iz-RYZ" kind="unwind" identifier="didSelectPrefecture" unwindAction="didSelectPrefectureWithUnwindSegue:" id="d1U-o7-X3v"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -125,6 +128,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dtm-nq-lwk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="RtO-Iz-RYZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="737" y="-27"/>
         </scene>
